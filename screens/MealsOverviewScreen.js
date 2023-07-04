@@ -24,12 +24,17 @@ function MealsOverviewScreen({ route, navigation }){
 
     }, [catId, navigation]);
     
-    
+    function pressHandler(){
+        navigation.navigate('Details',{
+            categoryId: itemData.item.id
+        });
+    };
 
     function renderMealItem(itemData){
 
         const item = itemData.item
         const mealItemProps = {
+            id: item.id,
             title: item.title,
             imageUrl: item.imageUrl,
             complexity: item.complexity,
