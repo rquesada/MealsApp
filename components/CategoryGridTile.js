@@ -5,8 +5,13 @@ import {
     StyleSheet,
     Platform
  } from "react-native";
+ 
+ /*
+    import { useNavigation } from "@react-navigation/core";
+    used to navigate from internal component
+ */
 
-function CategoryGridTile({title, color}) {
+function CategoryGridTile({title, color, onPress}) {
     return(
         <View style={styles.gridItem}>
             <Pressable 
@@ -14,7 +19,9 @@ function CategoryGridTile({title, color}) {
                 style={({pressed}) => [
                     styles.button, 
                     pressed ? styles.buttonPressed : null,
-                ]}>
+                ]}
+                onPress={onPress}
+                >
                 <View style={[styles.innerContainer, {backgroundColor: color}]}>
                     <Text style={styles.title}>
                         {title}
