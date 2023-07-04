@@ -24,7 +24,13 @@ function DetailsScreen({route, navigation}){
     useLayoutEffect( () => {
         navigation.setOptions({
             headerRight: () => {
-                return <IconButton onPress={headerButtonPressHandler}/>
+                return (
+                    <IconButton 
+                        name='star' 
+                        color='white' 
+                        onPress={headerButtonPressHandler}
+                    />
+                );
             }
         });
     }, []);
